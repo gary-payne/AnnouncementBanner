@@ -38,6 +38,7 @@
     "gulp-watch": "^4.3.9",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.1",
+    "moment": "^2.14.1",
     "office-ui-fabric": "^2.6.1",
     "sp-pnp-js": "^1.0.3",
     "spscript": "^1.5.1",
@@ -54,6 +55,7 @@
     ]
   },
   "browserify-shim": {
+    "moment": "global:moment",
     "sp-pnp-js": "global:$pnp"
   }
 }

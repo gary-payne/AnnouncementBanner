@@ -12,10 +12,11 @@ import sourcemaps from'gulp-sourcemaps';
 import spsave from 'gulp-spsave';
 
 import Config  from'./gulpfile.config';
-
-//Save some config settings in a separate JSON file - any sensitive data can thus be separated
-const settings = JSON.parse(fs.readFileSync("../settings.json"));
 var config = new Config();
+
+//Storing some sensitive config settings in a separate JSON file external to this GIT repo
+const settings = JSON.parse(fs.readFileSync("../settings.json"));
+//const settings = JSON.parse(fs.readFileSync("../settings-ry.json"));
 
 gulp.task("test", () => {
     console.log("Yes");
@@ -24,9 +25,10 @@ gulp.task("test", () => {
 gulp.task('libs', function(){
     return gulp.src([
             'node_modules/es6-promise/dist/es6-promise.js',
+            'node_modules/moment/min/moment.min.js',
             'node_modules/office-ui-fabric/dist/css/fabric.css',
             'node_modules/office-ui-fabric/dist/css/fabric.components.css',
-            'node_modules/sp-pnp-js/dist/pnp.js',
+            'node_modules/sp-pnp-js/dist/pnp.min.js',
             'node_modules/whatwg-fetch/fetch.js'])
         .pipe(print())
         .pipe(gulp.dest(config.librariesOutputPath));
@@ -56,7 +58,8 @@ gulp.task('js', ['lint'], function() {
 gulp.task('spupload', ['js'], function () {
     return gulp.src([
             config.distOutputPath + '/*.js',
-            //config.librariesOutputPath + '/*.js',
+            config.librariesOutputPath + '/*.css',
+            config.librariesOutputPath + '/*.js',
             config.htmlOutputPath + '/*.html'
             ])
         .pipe(spsave({
@@ -67,3 +70,5 @@ gulp.task('spupload', ['js'], function () {
             notification: true
         }));
 })
+
+gulp.task('default', ['spupload']);

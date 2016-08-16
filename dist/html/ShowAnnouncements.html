@@ -1,19 +1,21 @@
-<script src="/sites/demo/SiteAssets/es6-promise.js"></script>
-<script src="/sites/demo/SiteAssets/fetch.js"></script>
-<script src="/sites/demo/SiteAssets/pnp.js"></script>
-<script src="/sites/demo/SiteAssets/bundle-announcebanner.js?update=1"></script>
-<link href="/sites/demo/SiteAssets/fabric.css" rel="stylesheet" />
-<link href="/sites/demo/SiteAssets/fabric.components.css" rel="stylesheet" />
+<script src="/sites/intranet/SiteAssets/es6-promise.js"></script>
+<script src="/sites/intranet/SiteAssets/fetch.js"></script>
+<script src="/sites/intranet/SiteAssets/moment.min.js"></script>
+<script src="/sites/intranet/SiteAssets/pnp.min.js"></script>
+<script src="/sites/intranet/SiteAssets/bundle-announcebanner.js?update=1"></script>
+<link href="/sites/intranet/SiteAssets/fabric.css" rel="stylesheet" />
+<link href="/sites/intranet/SiteAssets/fabric.components.css" rel="stylesheet" />
 <style>
     #customContent ul { list-style:none;margin:0;padding:0; }
-    #customContent li { padding:5px 0 0 5px; }
+    #customContent li { margin:0 0 5px 0;padding:5px 0 0 5px; }
     .announcementBannerTitle { font-weight:bold; }
-    .bannerAnnouncementLow { background-color:white; }
-    .bannerAnnouncementLow .announcementBannerTitle { color:green; }
-    .bannerAnnouncementLow i { color:green; float: left; font-size:30px; padding-top:5px; padding-right:5px;  }
-    .bannerAnnouncementMedium { background-color:green; }
-    .bannerAnnouncementMedium i { color:orange; float: left; font-size:30px; padding-top:5px; padding-right:5px; }
-    .bannerAnnouncementHigh { background-color:#ffe6e3; border:1px solid red; }
+    .bannerAnnouncementLow { border:2px solid #CCCC00; } /* background-color:#FEFF94; */
+    .bannerAnnouncementLow .announcementBannerTitle { color:#CCCC00; }
+    .bannerAnnouncementLow i { color:#CCCC00; float: left; font-size:30px; padding-top:5px; padding-right:5px;  }
+    .bannerAnnouncementMedium { border:2px solid #FF7200; } /* background-color:#FFECDD; */
+    .bannerAnnouncementMedium .announcementBannerTitle { color:#FF7200; }
+    .bannerAnnouncementMedium i { color:#FF7200; float: left; font-size:30px; padding-top:5px; padding-right:5px; }
+    .bannerAnnouncementHigh { border:2px solid red; } /* background-color:#ffe6e3; */
     .bannerAnnouncementHigh .announcementBannerTitle { color:red; }
     .bannerAnnouncementHigh i { color:red; float: left; font-size:30px; padding-top:5px; padding-right:5px; }
 </style>
